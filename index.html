@@ -14,6 +14,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* FONTE ARTEGRA SLAB - NEGRITO */
+    @font-face {
+      font-family: 'ArtegraSlab';
+      src: url('ArtegraSlab-Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -39,7 +47,6 @@
     }
 
     /* TODO O RESTO DO SEU CÓDIGO ESTÁ 100% IGUAL */
-
 
     /* SLIDESHOW DE FUNDO - TELA INTEIRA */
     .background-slideshow {
@@ -67,7 +74,6 @@
     .background-slideshow img:nth-child(2) { animation-delay: 8s, 8s; }
     .background-slideshow img:nth-child(3) { animation-delay: 16s, 16s; }
 
-    /* Transição de troca */
     @keyframes fade {
       0%   { opacity: 0; }
       10%  { opacity: 0.5; }
@@ -76,21 +82,19 @@
       100% { opacity: 0; }
     }
 
-    /* Movimento suave da imagem (pan/zoom lento) */
     @keyframes move {
       0%   { transform: scale(1) translate(0, 0); }
       50%  { transform: scale(1.05) translate(-2%, -2%); }
       100% { transform: scale(1.1) translate(-4%, -4%); }
     }
 
-    /* CAMADA ESCURA MAIS SUAVE */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8); /* menos forte */
+      background: rgba(0, 0, 0, 0.8);
       z-index: -1;
     }
 
@@ -108,6 +112,16 @@
     .logo img {
       max-width: 220px;
       height: auto;
+    }
+
+    /* FRASE DA MARCA */
+    .slogan {
+      font-family: 'ArtegraSlab', serif;
+      font-weight: bold;
+      color: #ffd21f;
+      font-size: 26px;
+      margin-bottom: 28px;
+      letter-spacing: 1px;
     }
 
     .links {
@@ -172,6 +186,14 @@
     <div class="logo">
       <img src="logo.png" alt="Logo Ze Lenha Pizzaria" />
     </div>
+
+    <!-- FRASE DA MARCA -->
+    <div class="slogan">
+      AUTÊNTICA. ARTESANAL. NO FORNO A LENHA.
+    </div>
+
+    <div class="links">
+      <!-- TODO O RESTO DOS LINKS ESTÁ 100% IGUAL -->
 
     <div class="links">
       <a href="https://zelenhapizzaria.menudino.com" target="_blank">
