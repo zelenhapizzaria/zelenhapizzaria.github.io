@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zelenha Pizzaria</title>
 
-  <!-- Ícones (Font Awesome) -->
+  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -14,6 +14,11 @@
       margin: 0;
       padding: 0;
       font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
     }
 
     body {
@@ -28,51 +33,64 @@
       overflow-y: auto;
     }
 
-    /* SLIDESHOW DE FUNDO */
+    /* SLIDESHOW DE FUNDO - TELA INTEIRA */
     .background-slideshow {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       z-index: -2;
+      overflow: hidden;
     }
 
     .background-slideshow img {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 110%;
       object-fit: cover;
       opacity: 0;
-      animation: fade 24s infinite;
+      animation: fade 24s infinite, move 24s infinite linear;
     }
 
-    .background-slideshow img:nth-child(1) { animation-delay: 0s; }
-    .background-slideshow img:nth-child(2) { animation-delay: 8s; }
-    .background-slideshow img:nth-child(3) { animation-delay: 16s; }
+    .background-slideshow img:nth-child(1) { animation-delay: 0s, 0s; }
+    .background-slideshow img:nth-child(2) { animation-delay: 8s, 8s; }
+    .background-slideshow img:nth-child(3) { animation-delay: 16s, 16s; }
 
+    /* Transição de troca */
     @keyframes fade {
       0%   { opacity: 0; }
-      10%  { opacity: 0.2; }
-      30%  { opacity: 0.2; }
+      10%  { opacity: 0.25; }
+      30%  { opacity: 0.25; }
       40%  { opacity: 0; }
       100% { opacity: 0; }
     }
 
-    /* CAMADA ESCURA POR CIMA PARA LEGIBILIDADE */
+    /* Movimento suave da imagem (pan/zoom lento) */
+    @keyframes move {
+      0%   { transform: scale(1) translate(0, 0); }
+      50%  { transform: scale(1.05) translate(-2%, -2%); }
+      100% { transform: scale(1.1) translate(-4%, -4%); }
+    }
+
+    /* CAMADA ESCURA MAIS SUAVE */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5); /* menos forte */
       z-index: -1;
     }
 
     .container {
       max-width: 480px;
       width: 100%;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     .logo {
@@ -98,12 +116,12 @@
       gap: 10px;
       padding: 14px 16px;
       border-radius: 10px;
-      background: #f2c300; /* amarelo da logo */
+      background: #f2c300;
       color: #111;
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
-      transition: transform 0.1s ease, background 0.2s ease;
+      transition: transform 0.15s ease, background 0.2s ease;
     }
 
     .links a:hover {
@@ -118,22 +136,21 @@
     .historia {
       font-size: 14px;
       line-height: 1.6;
-      color: #dddddd;
+      color: #eeeeee;
       margin-top: 16px;
     }
 
     footer {
       margin-top: 32px;
       font-size: 12px;
-      color: #aaa;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
 
-  <!-- SLIDESHOW DE IMAGENS DE FUNDO -->
+  <!-- SLIDESHOW DE FUNDO -->
   <div class="background-slideshow">
-    <!-- Substitua pelos nomes reais das fotos da sua pizzaria -->
     <img src="foto1.jpg" alt="Pizza 1" />
     <img src="foto2.jpg" alt="Pizza 2" />
     <img src="foto3.jpg" alt="Pizza 3" />
@@ -144,12 +161,10 @@
 
   <div class="container">
 
-    <!-- LOGO -->
     <div class="logo">
       <img src="logo.png" alt="Logo Zelenha Pizzaria" />
     </div>
 
-    <!-- LINKS COM ÍCONES -->
     <div class="links">
       <a href="https://instagram.com/seuinstagram" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
@@ -180,7 +195,6 @@
       </a>
     </div>
 
-    <!-- HISTÓRIA -->
     <div class="historia">
       <p>
         Nascida em São Paulo, inspirada em Nápoles. Nossa pizza é feita com blend exclusivo de farinhas,
