@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ze Lenha Pizzaria</title>
+
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,14 +18,56 @@
 
     body {
       min-height: 100vh;
-      background: #111; /* grafite/preto */
       color: #f5f5f5;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 24px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* SLIDESHOW DE FUNDO */
+    .background-slideshow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .background-slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fade 24s infinite;
+    }
+
+    .background-slideshow img:nth-child(1) { animation-delay: 0s; }
+    .background-slideshow img:nth-child(2) { animation-delay: 8s; }
+    .background-slideshow img:nth-child(3) { animation-delay: 16s; }
+
+    @keyframes fade {
+      0%   { opacity: 0; }
+      10%  { opacity: 0.2; }
+      30%  { opacity: 0.2; }
+      40%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* CAMADA ESCURA POR CIMA PARA LEGIBILIDADE */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
 
     .container {
@@ -46,67 +92,100 @@
     }
 
     .links a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       padding: 14px 16px;
       border-radius: 10px;
-      background: #1f1f1f;
-      color: #ffffff;
+      background: #f2c300; /* amarelo da logo */
+      color: #111;
       text-decoration: none;
       font-size: 16px;
+      font-weight: bold;
       transition: transform 0.1s ease, background 0.2s ease;
     }
 
     .links a:hover {
-      background: #2a2a2a;
+      background: #ffd84d;
       transform: translateY(-2px);
+    }
+
+    .links i {
+      font-size: 18px;
     }
 
     .historia {
       font-size: 14px;
       line-height: 1.6;
-      color: #cccccc;
+      color: #dddddd;
       margin-top: 16px;
     }
 
     footer {
       margin-top: 32px;
       font-size: 12px;
-      color: #777;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
+  <!-- SLIDESHOW DE IMAGENS DE FUNDO -->
+  <div class="background-slideshow">
+    <!-- Substitua pelos nomes reais das fotos da sua pizzaria -->
+    <img src="foto1.jpg" alt="Pizza 1" />
+    <img src="foto2.jpg" alt="Pizza 2" />
+    <img src="foto3.jpg" alt="Pizza 3" />
+  </div>
+
+  <!-- CAMADA ESCURA -->
+  <div class="overlay"></div>
+
   <div class="container">
+
     <!-- LOGO -->
     <div class="logo">
-      <!-- Substitua o src pelo caminho da sua logo -->
       <img src="logo.png" alt="Logo Ze Lenha Pizzaria" />
     </div>
 
-    <!-- LINKS -->
+    <!-- LINKS COM ÍCONES -->
     <div class="links">
-      <a href="https://zelenhapizzaria.menudino.com" target="_blank">Peça pelo Cardápio Digital</a>
-      <a href="https://wa.me/551138163744" target="_blank">WhatsApp Pedido Rápido</a>
-      <a href="https://wa.me/5511934612559" target="_blank">Faça seu pedido com um Atendente</a>
-      <a href="https://www.ifood.com.br" target="_blank">iFood</a>
-      <a href="https://www.99food.com.br" target="_blank">99Food</a>
-      <a href="https://www.keeta.com" target="_blank">Keeta</a>
-      <a href="https://instagram.com/zelenhapizzaria" target="_blank">Visite nosso Instagram</a>
+      <a href="https://instagram.com/zelenhapizzaria" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="https://zelenhapizzaria.menudino.com" target="_blank">
+        <i class="fas fa-utensils"></i> Cardápio Digital
+      </a>
+
+      <a href="https://wa.me/5511999999999" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Pedidos
+      </a>
+
+      <a href="https://wa.me/5511888888888" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Informações
+      </a>
+
+      <a href="https://www.ifood.com.br" target="_blank">
+        <i class="fas fa-bag-shopping"></i> iFood
+      </a>
+
+      <a href="https://www.99food.com.br" target="_blank">
+        <i class="fas fa-motorcycle"></i> 99Food
+      </a>
+
+      <a href="https://www.keeta.com" target="_blank">
+        <i class="fas fa-store"></i> Keeta
+      </a>
     </div>
 
     <!-- HISTÓRIA -->
     <div class="historia">
       <p>
-       NASCIDA EM SÃO PAULO, INSPIRADA EM NÁPOLES.
-NOSSO BLEND EXCLUSIVO DE FARINHAS PASSA POR LENTA FERMENTAÇÃO E
-HIDRATAÇÃO NA MEDIDA CERTA. SOMADO AO MOLHO ARTESANAL, GANHA
-VIDA NO CALOR DO FORNO A LENHA — OS QUASE 400 °C SÃO
-RESPONSÁVEIS PELA COLORAÇÃO E CROCÂNCIA DA BORDA POR FORA, E
-PELA MACIEZ E ALVÉOLOS POR DENTRO. MASSA FINA, ELÁSTICA E LEVE,
-COMBINADA À QUALIDADE E GENEROSIDADE DO RECHEIO.
-A UNIÃO ENTRE TRADIÇÃO NAPOLITANA E FARTURA PAULISTANA.
-
-        AUTÊNTICA. ARTESANAL. NO FORNO A LENHA.
+        Nascida em São Paulo, inspirada em Nápoles. Nossa pizza é feita com blend exclusivo de farinhas,
+        longa fermentação e molho artesanal, assada em forno a lenha para alcançar o equilíbrio perfeito
+        entre leveza, crocância e sabor.
       </p>
     </div>
 
@@ -116,3 +195,4 @@ A UNIÃO ENTRE TRADIÇÃO NAPOLITANA E FARTURA PAULISTANA.
   </div>
 </body>
 </html>
+
