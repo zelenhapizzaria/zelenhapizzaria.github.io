@@ -28,9 +28,11 @@
 
     @font-face {
       font-family: 'Bryndan Write';
-      src: url('BryndanWrite.woff2') format('woff2'),
+      src: local('Bryndan Write'),
+           local('BryndanWrite'),
+           url('BryndanWrite.woff2') format('woff2'),
            url('BryndanWrite.ttf') format('truetype');
-      font-weight: normal;
+      font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
@@ -194,12 +196,14 @@
       }
     }
 
-    .historia {
+    .historia,
+    .historia p {
       font-size: 14px;
       line-height: 1.6;
       color: #eeeeee;
       margin-top: 16px;
-      font-family: 'Bryndan Write' !important;
+      font-family: 'Bryndan Write', cursive !important;
+      font-weight: 400;
     }
 
     footer {
