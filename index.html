@@ -261,6 +261,63 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* GALERIA / SLIDES */
+    .galeria {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 6px 4px 14px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .galeria::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .galeria::-webkit-scrollbar-thumb {
+      background: rgba(255, 210, 31, 0.45);
+      border-radius: 10px;
+    }
+
+    .galeria-item {
+      flex: 0 0 85%;
+      scroll-snap-align: center;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255, 210, 31, 0.18);
+      background: rgba(0,0,0,0.2);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 521px) {
+      .galeria-item {
+        flex-basis: 70%;
+      }
+      .galeria-item img {
+        height: 280px;
+      }
+    }
+
+    .endereco {
+      margin-top: 10px;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: #f3f3f3;
+      opacity: 0.95;
+    }
   </style>
 </head>
 <body>
@@ -327,9 +384,37 @@
       </p>
     </div>
 
+    <h2 class="slogan">CONHEÇA NOSSO ESPAÇO</h2>
+
+    <div class="galeria" aria-label="Galeria de fotos do espaço">
+      <div class="galeria-item">
+        <img src="espaco1.jpg" alt="Foto do espaço 1" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="espaco2.jpg" alt="Foto do espaço 2" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="espaco3.jpg" alt="Foto do espaço 3" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="espaco4.jpg" alt="Foto do espaço 4" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="espaco5.jpg" alt="Foto do espaço 5" loading="lazy">
+      </div>
+      <div class="galeria-item">
+        <img src="espaco6.jpg" alt="Foto do espaço 6" loading="lazy">
+      </div>
+    </div>
+
+    <div class="endereco">
+      📍 Rua Fernão Dias, 518 - Pinheiros. Venha nos visitar!
+    </div>
+
     <footer>
       © 2026 ZÉ LENHA PIZZARIA
     </footer>
   </main>
 </body>
 </html>
+
