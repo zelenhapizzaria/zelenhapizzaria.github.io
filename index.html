@@ -13,8 +13,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Preload imagens -->
+  <link rel="preload" as="image" href="foto1.jpg">
+  <link rel="preload" as="image" href="foto2.jpg">
+  <link rel="preload" as="image" href="foto3.jpg">
+
   <style>
-    /* FONTE ARTEGRA SLAB - NEGRITO */
     @font-face {
       font-family: 'ArtegraSlab';
       src: url('ArtegraSlab-Bold.woff2') format('woff2');
@@ -22,18 +26,20 @@
       font-style: normal;
     }
 
-    /* FONTE BRYNDAN WRITE */
-@font-face {
-  font-family: 'Bryndan Write';
-  src: url('bryndanwritebook-ngpm-webfont.woff2') format('woff2'),
-       url('bryndanwritebook-ngpm-webfont.woff') format('woff'),
-       url('bryndanwritebook-ngpm-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+    @font-face {
+      font-family: 'Bryndan Write';
+      src: url('bryndanwritebook-ngpm-webfont.woff2') format('woff2'),
+           url('bryndanwritebook-ngpm-webfont.woff') format('woff'),
+           url('bryndanwritebook-ngpm-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
 
-   
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -58,9 +64,6 @@
       overflow-y: auto;
     }
 
-    /* TODO O RESTO DO SEU CÓDIGO ESTÁ 100% IGUAL */
-
-    /* SLIDESHOW DE FUNDO - TELA INTEIRA */
     .background-slideshow {
       position: fixed;
       top: 0;
@@ -126,15 +129,14 @@
       height: auto;
     }
 
-    /* FRASE DA MARCA */
     .slogan {
-  font-family: 'ArtegraSlab', serif;
-  font-weight: bold;
-  color: #ffd21f;
-  font-size: 22px;        /* diminui levemente o tamanho */
-  margin-bottom: 36px;   /* aproxima da logo e afasta dos botões */
-  letter-spacing: 1px;
-  }
+      font-family: 'ArtegraSlab', serif;
+      font-weight: bold;
+      color: #ffd21f;
+      font-size: 22px;
+      margin-bottom: 36px;
+      letter-spacing: 1px;
+    }
 
     .links {
       display: flex;
@@ -155,25 +157,51 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
-      transition: transform 0.15s ease, background 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .links a:hover {
       background: #ffe45c;
-      transform: translateY(-2px);
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
 
     .links i {
       font-size: 18px;
     }
 
-.historia {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #eeeeee;
-  margin-top: 16px;
-  font-family: 'Bryndan Write' !important;
-}
+    /* Botão principal destacado */
+    .links a:first-child {
+      background: #ff6a00;
+      color: white;
+      animation: pulse 2.5s infinite;
+    }
+
+    .links a:first-child:hover {
+      background: #ff7e26;
+    }
+
+    /* Animação de destaque */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 106, 0, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 106, 0, 0);
+      }
+    }
+
+    .historia {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #eeeeee;
+      margin-top: 16px;
+      font-family: 'Bryndan Write' !important;
+    }
 
     footer {
       margin-top: 32px;
@@ -184,25 +212,22 @@
 </head>
 <body>
 
-  <!-- SLIDESHOW DE FUNDO -->
   <div class="background-slideshow">
-    <img src="foto1.jpg" alt="Pizza 1" />
-    <img src="foto2.jpg" alt="Pizza 2" />
-    <img src="foto3.jpg" alt="Pizza 3" />
+    <img src="foto1.jpg" alt="Pizza com borda recheada em forno a lenha" />
+    <img src="foto2.jpg" alt="Pizza artesanal saindo do forno" />
+    <img src="foto3.jpg" alt="Pizza fatiada com ingredientes frescos" />
   </div>
 
-  <!-- CAMADA ESCURA -->
   <div class="overlay"></div>
 
   <div class="container">
 
     <div class="logo">
-      <img src="logo.png" alt="Logo Ze Lenha Pizzaria" />
+      <img src="logo.png" alt="Logo da Zé Lenha Pizzaria com fundo rústico e letras em vermelho" />
     </div>
 
-    <!-- FRASE DA MARCA -->
     <div class="slogan">
-      AUTENTICA. ARTESANAL. NO FORNO A LENHA.
+      AUTÊNTICA. ARTESANAL. NO FORNO A LENHA.
     </div>
 
     <div class="links">
@@ -233,30 +258,21 @@
       <a href="https://wa.me/5511982687930" target="_blank">
         <i class="fas fa-bag-shopping"></i> Eventos, Reservas e Parcerias
       </a>
-      
+
       <a href="https://instagram.com/zelenhapizzaria" target="_blank">
         <i class="fab fa-instagram"></i> Visite nosso Instagram
       </a>
     </div>
 
-      <div style="
-  font-family: 'ArtegraSlab', serif;
-  font-weight: bold;
-  color: #ffd21f;
-  font-size: 22px;
-  margin: 34px 0 12px 0;
-  letter-spacing: 1px;
-">
-  SOBRE NOS
-</div>
+    <h2 class="slogan">SOBRE NÓS</h2>
 
-<div class="historia">
-  <p>
-    NASCIDA EM SÃO PAULO, INSPIRADA EM NÁPOLES.
-    NOSSO BLEND EXCLUSIVO DE FARINHAS PASSA POR LENTA FERMENTAÇÃO E HIDRATAÇÃO NA MEDIDA CERTA. SOMADO AO MOLHO ARTESANAL, GANHA VIDA NO CALOR DO FORNO A LENHA — OS QUASE 400 °C SÃO RESPONSÁVEIS PELA COLORAÇÃO E CROCÂNCIA DA BORDA POR FORA, E PELA MACIEZ E ALVÉOLOS POR DENTRO. MASSA FINA, ELÁSTICA E LEVE, COMBINADA À QUALIDADE E GENEROSIDADE DO RECHEIO.
-    A UNIÃO ENTRE TRADIÇÃO NAPOLITANA E FARTURA PAULISTANA.
-  </p>
-</div>
+    <div class="historia">
+      <p>
+        NASCIDA EM SÃO PAULO, INSPIRADA EM NÁPOLES.
+        NOSSO BLEND EXCLUSIVO DE FARINHAS PASSA POR LENTA FERMENTAÇÃO E HIDRATAÇÃO NA MEDIDA CERTA. SOMADO AO MOLHO ARTESANAL, GANHA VIDA NO CALOR DO FORNO A LENHA — OS QUASE 400 °C SÃO RESPONSÁVEIS PELA COLORAÇÃO E CROCÂNCIA DA BORDA POR FORA, E PELA MACIEZ E ALVÉOLOS POR DENTRO. MASSA FINA, ELÁSTICA E LEVE, COMBINADA À QUALIDADE E GENEROSIDADE DO RECHEIO.
+        A UNIÃO ENTRE TRADIÇÃO NAPOLITANA E FARTURA PAULISTANA.
+      </p>
+    </div>
 
     <footer>
       © 2026 ZÉ LENHA PIZZARIA
