@@ -12,6 +12,16 @@
   "@type": "Restaurant",
   "name": "Zé Lenha Pizzaria",
   "image": "https://zelenhapizzaria.com.br/logo.png",
+  "url": "https://zelenhapizzaria.com.br",
+  "telephone": "+55 11 93461-2559",
+  "priceRange": "$$",
+  "servesCuisine": [
+    "Pizza",
+    "Pizza Artesanal",
+    "Pizza Forno a Lenha",
+    "Pizza Napolitana"
+  ],
+
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rua Fernão Dias, 518",
@@ -20,14 +30,53 @@
     "postalCode": "05427-000",
     "addressCountry": "BR"
   },
-  "servesCuisine": "Pizza",
-  "priceRange": "$$",
-  "url": "https://zelenhapizzaria.com.br",
-  "telephone": "+55 11 93461-2559",
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.5676,
+    "longitude": -46.6927
+  },
+
+  "areaServed": {
+    "@type": "City",
+    "name": "São Paulo"
+  },
+
+  "hasMenu": "https://zelenhapizzaria.menudino.com",
+
+  "acceptsReservations": true,
+
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "17:00",
+      "closes": "1:30"
+    }
+  ],
+
   "sameAs": [
     "https://instagram.com/zelenhapizzaria",
     "https://www.ifood.com.br",
-    "https://www.google.com/maps"
+    "https://maps.google.com/?q=-23.5676,-46.6927"
+  ],
+
+  "potentialAction": [
+    {
+      "@type": "OrderAction",
+      "target": "https://zelenhapizzaria.menudino.com"
+    },
+    {
+      "@type": "OrderAction",
+      "target": "https://www.ifood.com.br"
+    }
   ]
 }
 </script>
@@ -44,6 +93,13 @@
 <meta name="google-site-verification" content="UKmnsCluULEX5WFtNHt7MY4aNHRlx63O5-_TQEvxlPY" />
 
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Zé Lenha Pizzaria">
+  <meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zé Lenha Pizzaria">
+<meta name="twitter:description" content="Pizza artesanal no forno a lenha em Pinheiros.">
+<meta name="twitter:image" content="https://zelenhapizzaria.com.br/social-preview.png">
   
   <meta name="theme-color" content="#111111">
   
@@ -409,9 +465,9 @@
 <body>
 
   <div class="background-slideshow">
-    <img src="foto1.jpg" alt="Pizza com borda recheada em forno a lenha" />
-    <img src="foto2.jpg" alt="Pizza artesanal saindo do forno" />
-    <img src="foto3.jpg" alt="Pizza fatiada com ingredientes frescos" />
+    <img src="foto1.jpg" alt="Pizza com borda recheada em forno a lenha" loading="eager"/>
+    <img src="foto2.jpg" alt="Pizza artesanal saindo do forno" loading="lazy"/>
+    <img src="foto3.jpg" alt="Pizza fatiada com ingredientes frescos" loading="lazy"/>
   </div>
 
   <div class="overlay"></div>
@@ -427,35 +483,35 @@
 </div>
 
     <div class="links" aria-label="Links principais">
-      <a href="https://zelenhapizzaria.menudino.com" target="_blank" rel="noreferrer">
+      <a href="https://zelenhapizzaria.menudino.com" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-utensils"></i> PEÇA NO CARDÁPIO DIGITAL
       </a>
 
-      <a href="https://wa.me/5511934612559" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/5511934612559" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> PEÇA PELO WHATSAPP
       </a>
 
-      <a href="https://wa.me/551138163744" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/551138163744" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> WHATSAPP PEDIDO RÁPIDO
       </a>
 
-      <a href="https://www.ifood.com.br" target="_blank" rel="noreferrer">
+      <a href="https://www.ifood.com.br" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-motorcycle"></i> PEÇA NO IFOOD
       </a>
 
-      <a href="https://www.99food.com.br" target="_blank" rel="noreferrer">
+      <a href="https://www.99food.com.br" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-motorcycle"></i> PEÇA NA 99FOOD
       </a>
 
-      <a href="https://www.keeta.com" target="_blank" rel="noreferrer">
+      <a href="https://www.keeta.com" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-motorcycle"></i> PEÇA NA KEETA
       </a>
 
-      <a href="https://wa.me/5511982687930" target="_blank" rel="noreferrer">
+      <a href="https://wa.me/5511982687930" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-bag-shopping"></i> EVENTOS, RESERVAS E PARCERIAS
       </a>
 
-      <a href="https://instagram.com/zelenhapizzaria" target="_blank" rel="noreferrer">
+      <a href="https://instagram.com/zelenhapizzaria" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-instagram"></i> VISITE NOSSO INSTAGRAM
       </a>
     </div>
