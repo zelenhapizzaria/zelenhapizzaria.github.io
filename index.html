@@ -31,6 +31,12 @@
     "addressCountry": "BR"
   },
 
+  "aggregateRating": {
+ "@type": "AggregateRating",
+ "ratingValue": "5",
+ "reviewCount": "627"
+},
+
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": -23.5676,
@@ -58,7 +64,7 @@
         "Sunday"
       ],
       "opens": "17:00",
-      "closes": "1:30"
+      "closes": "01:30"
     }
   ],
 
@@ -91,10 +97,6 @@
      "@type": "MenuSection",
      "name": "Pizzas Clássicas",
      "hasMenuItem": [
-       {
-         "@type": "MenuItem",
-         "name": "Pizza Margherita"
-       },
          {
          "@type": "MenuItem",
          "name": "Pizza Marguerita"
@@ -102,10 +104,6 @@
          {
          "@type": "MenuItem",
          "name": "Pizza Mussarela"
-       },
-         {
-         "@type": "MenuItem",
-         "name": "Pizza Muçarela"
        },
          {
          "@type": "MenuItem",
@@ -203,20 +201,6 @@
    }
  ]
 }
-</script>
-
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Restaurant",
- "name": "Zé Lenha Pizzaria",
- "aggregateRating": {
-   "@type": "AggregateRating",
-   "ratingValue": "5.0",
-   "reviewCount": "627"
- }
-}
-</script>
 
 <script type="application/ld+json">
 {
@@ -299,10 +283,10 @@
 
   <!-- Preload imagens -->
   <link rel="preload" as="image" href="foto1.webp">
-  <link rel="preload" as="image" href="foto2.webp">
-  <link rel="preload" as="image" href="foto3.webp">
   <link rel="preload" as="font" href="BryndanWrite.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="ArtegraSlab-Bold.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="logo.png">
+  <img src="logo.png" loading="eager">
    
    <style>
     @font-face {
@@ -635,7 +619,7 @@
   <main class="container">
 
     <div class="logo">
-      <img src="logo.png" alt="Logo da Zé Lenha Pizzaria com fundo rústico e letras em vermelho" />
+      <img src="logo.png" alt="Zé Lenha Pizzaria - Pizza artesanal forno a lenha em Pinheiros São Paulo" />
     </div>
 
 <div class="slogan">
