@@ -682,8 +682,11 @@
 
 <script>
 window.addEventListener("load", () => {
-  document.querySelectorAll(".background-slideshow img").forEach(img => {
-    img.style.animation = "fade 24s infinite, move 24s infinite linear";
+  const slides = document.querySelectorAll(".background-slideshow img");
+
+  slides.forEach((img, i) => {
+    const delay = i * 8; 
+    img.style.animation = `fade 24s infinite ${delay}s, move 24s infinite linear ${delay}s`;
   });
 });
 </script>
