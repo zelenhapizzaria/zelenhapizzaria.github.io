@@ -81,6 +81,164 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Menu",
+ "name": "Cardápio Zé Lenha Pizzaria",
+ "hasMenuSection": [
+   {
+     "@type": "MenuSection",
+     "name": "Pizzas Clássicas",
+     "hasMenuItem": [
+       {
+         "@type": "MenuItem",
+         "name": "Pizza Margherita"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Marguerita"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Mussarela"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Muçarela"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Calabresa"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Frango com Catupiry"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Bacon"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Atum"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Bauru"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Brócolis"
+       },
+       {
+         "@type": "MenuItem",
+         "name": "Pizza Napolitana"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Portuguesa"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Toscana"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Palmito"
+       },
+         {
+         "@type": "MenuItem",
+         "name": "Pizza Vegetariana"
+       },
+       {
+         "@type": "MenuItem",
+         "name": "Pizza Rúcula"
+       }
+     ]
+   },
+
+   {
+     "@type": "MenuSection",
+     "name": "Pizzas Especiais",
+     "hasMenuItem": [
+       {
+         "@type": "MenuItem",
+         "name": "Pizza Marguerita Especial"
+       },
+       {
+         "@type": "MenuItem",
+         "name": "Pizza 4 Queijos"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Quatro Queijos"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Lombo Com Catupiry"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Baiana"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Carne Seca"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Cogumelos"
+       },
+    {
+         "@type": "MenuItem",
+         "name": "Pizza Pepperoni"
+       },
+
+    {
+         "@type": "MenuItem",
+         "name": "Calzone"
+       }
+     ]
+   }
+ ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Restaurant",
+ "name": "Zé Lenha Pizzaria",
+ "aggregateRating": {
+   "@type": "AggregateRating",
+   "ratingValue": "5.0",
+   "reviewCount": "627"
+ }
+}
+</script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Review",
+ "itemReviewed": {
+   "@type": "Restaurant",
+   "name": "Zé Lenha Pizzaria"
+ },
+ "author": {
+   "@type": "Person",
+   "name": "Carlos Silva"
+ },
+ "reviewRating": {
+   "@type": "Rating",
+   "ratingValue": "5",
+   "bestRating": "5"
+ },
+ "reviewBody": "A melhor pizza da região, chegou rápido e muito saborosa."
+}
+</script>
+  
   <meta name="geo.region" content="BR-SP">
 <meta name="geo.placename" content="São Paulo">
 <meta name="geo.position" content="-23.5676;-46.6927">
@@ -91,6 +249,8 @@
   <link rel="canonical" href="https://zelenhapizzaria.com.br">
 
 <meta name="google-site-verification" content="UKmnsCluULEX5WFtNHt7MY4aNHRlx63O5-_TQEvxlPY" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <meta http-equiv="x-dns-prefetch-control" content="on">
 
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Zé Lenha Pizzaria">
@@ -129,7 +289,7 @@
   <!-- FONTE MONTSERRAT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- FONTE BEBAS NEUE -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -138,9 +298,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
 
   <!-- Preload imagens -->
-  <link rel="preload" as="image" href="foto1.jpg">
-  <link rel="preload" as="image" href="foto2.jpg">
-  <link rel="preload" as="image" href="foto3.jpg">
+  <link rel="preload" as="image" href="foto1.webp">
+  <link rel="preload" as="image" href="foto2.webp">
+  <link rel="preload" as="image" href="foto3.webp">
   <link rel="preload" as="font" href="BryndanWrite.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="ArtegraSlab-Bold.woff2" type="font/woff2" crossorigin>
    
@@ -465,9 +625,9 @@
 <body>
 
   <div class="background-slideshow">
-    <img src="foto1.jpg" alt="Pizza com borda recheada em forno a lenha" loading="eager"/>
-    <img src="foto2.jpg" alt="Pizza artesanal saindo do forno" loading="lazy"/>
-    <img src="foto3.jpg" alt="Pizza fatiada com ingredientes frescos" loading="lazy"/>
+    <img src="foto1.webp" alt="Pizza com borda recheada em forno a lenha" loading="eager"/>
+    <img src="foto2.webp" alt="Pizza artesanal saindo do forno" loading="lazy"/>
+    <img src="foto3.webp" alt="Pizza fatiada com ingredientes frescos" loading="lazy"/>
   </div>
 
   <div class="overlay"></div>
@@ -530,22 +690,22 @@
 
     <div class="galeria" aria-label="Galeria de fotos do espaço">
       <div class="galeria-item">
-        <img src="espaco1.jpg" alt="Foto do espaço 1" loading="lazy">
+        <img src="espaco1.webp" alt="Foto do espaço 1" loading="lazy">
       </div>
       <div class="galeria-item">
-        <img src="espaco2.jpg" alt="Foto do espaço 2" loading="lazy">
+        <img src="espaco2.webp" alt="Foto do espaço 2" loading="lazy">
       </div>
       <div class="galeria-item">
-        <img src="espaco3.jpg" alt="Foto do espaço 3" loading="lazy">
+        <img src="espaco3.webp" alt="Foto do espaço 3" loading="lazy">
       </div>
       <div class="galeria-item">
-        <img src="espaco4.jpg" alt="Foto do espaço 4" loading="lazy">
+        <img src="espaco4.webp" alt="Foto do espaço 4" loading="lazy">
       </div>
       <div class="galeria-item">
-        <img src="espaco5.jpg" alt="Foto do espaço 5" loading="lazy">
+        <img src="espaco5.webp" alt="Foto do espaço 5" loading="lazy">
       </div>
       <div class="galeria-item">
-        <img src="espaco6.jpg" alt="Foto do espaço 6" loading="lazy">
+        <img src="espaco6.webp" alt="Foto do espaço 6" loading="lazy">
       </div>
     </div>
 
