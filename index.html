@@ -348,13 +348,13 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- FONTE BEBAS NEUE -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- FONTE ROBOTO SLAB -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" rel="stylesheet">
+ <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Preload imagens -->
-  <link rel="preload" as="image" href="foto1.webp">
+  <link rel="preload" as="image" href="foto1.webp" fetchpriority="high">
   <link rel="preload" as="font" href="BryndanWrite.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="ArtegraSlab-Bold.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="logo.png">
@@ -427,6 +427,7 @@
       object-fit: cover;
       opacity: 0;
       animation: fade 24s infinite, move 24s infinite linear;
+      will-change: transform, opacity;
     }
 
     .background-slideshow img:nth-child(1) { animation-delay: 0s, 0s; }
@@ -680,7 +681,7 @@
 <body>
 
   <div class="background-slideshow">
-    <img src="foto1.webp" alt="Pizza com borda recheada em forno a lenha" loading="eager"/>
+    <img src="foto1.webp" alt="Pizza com borda recheada em forno a lenha" loading="eager" fetchpriority="high"/>
     <img src="foto2.webp" alt="Pizza artesanal saindo do forno" loading="lazy"/>
     <img src="foto3.webp" alt="Pizza fatiada com ingredientes frescos" loading="lazy"/>
   </div>
