@@ -340,7 +340,10 @@
 <meta property="og:type" content="website">
   
   <!-- Ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</noscript>
 
   <!-- FONTE MONTSERRAT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -354,10 +357,10 @@
  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Preload imagens -->
-  <link rel="preload" as="image" href="foto1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="foto1.webp" fetchpriority="low">
   <link rel="preload" as="font" href="BryndanWrite.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="ArtegraSlab-Bold.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="logo.png">
+  <link rel="preload" as="image" href="logo.png" fetchpriority="high">
    
    <style>
     @font-face {
@@ -416,17 +419,16 @@
       overflow: hidden;
     }
 
-    .background-slideshow img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 110%;
-      height: 110%;
-      object-fit: cover;
-      opacity: 0;
-      animation: fade 24s infinite, move 24s infinite linear;
-      will-change: transform, opacity;
-    }
+.background-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  opacity: 0;
+  will-change: transform, opacity;
+}
 
     .background-slideshow img:nth-child(1) { animation-delay: 0s, 0s; }
     .background-slideshow img:nth-child(2) { animation-delay: 8s, 8s; }
@@ -678,10 +680,18 @@
 </head>
 <body>
 
+<script>
+window.addEventListener("load", () => {
+  document.querySelectorAll(".background-slideshow img").forEach(img => {
+    img.style.animation = "fade 24s infinite, move 24s infinite linear";
+  });
+});
+</script>
+  
   <div class="background-slideshow">
     <img src="foto1.webp" alt="Pizza com borda recheada em forno a lenha" loading="eager" fetchpriority="high"/>
-    <img src="foto2.webp" alt="Pizza artesanal saindo do forno" loading="lazy"/>
-    <img src="foto3.webp" alt="Pizza fatiada com ingredientes frescos" loading="lazy"/>
+    <img src="foto2.webp" alt="Pizza artesanal saindo do forno" loading="lazy" decoding="async/>
+    <img src="foto3.webp" alt="Pizza fatiada com ingredientes frescos" loading="lazy" decoding="async/>
   </div>
 
   <div class="overlay"></div>
@@ -689,7 +699,12 @@
   <main class="container">
 
     <div class="logo">
-      <img src="logo.png" alt="Zé Lenha Pizzaria - Pizza artesanal forno a lenha em Pinheiros São Paulo" />
+      <img 
+src="logo.png"
+alt="Zé Lenha Pizzaria - Pizza artesanal forno a lenha em Pinheiros São Paulo"
+fetchpriority="high"
+decoding="async"
+/>
     </div>
 
 <div class="slogan">
